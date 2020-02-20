@@ -2,6 +2,8 @@ const express = require('express');
 const { ApolloServer, gql } = require('apollo-server-express');
 import typeDefs from './schemas';
 import resolvers from './resolvers';
+import models from './models';
+const { mongoose } = require('./database');
 
 const PORT = 4000;
 
@@ -19,7 +21,13 @@ const app = express();
 //   },
 // };
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({ 
+  typeDefs, 
+  resolvers,
+  context: {
+    models
+    } 
+  });
 server.applyMiddleware({ app });
 
 app.listen({ port: PORT }, () =>
