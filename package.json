@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
+    "apollo-link-http": "^1.5.16",
     "apollo-server": "^2.10.1",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
@@ -17,10 +20,12 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "graphql": "^14.6.0",
+    "graphql-tag": "^2.10.3",
     "graphql-tools": "^4.0.7",
     "merge-graphql-schemas": "^1.7.6",
     "mongoose": "^5.9.1",
     "nodemon": "^2.0.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react-apollo": "^3.1.3"
   }
 }
