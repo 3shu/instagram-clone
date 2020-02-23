@@ -8,7 +8,7 @@ export default ({styles, handleClick, handleSubmit, handleChange, args, errors})
   return (
   <div>
     <div  style={styles.box}>
-    <h2>Instagram-Clone</h2>
+    <img src='images/png-instagram-logo-2.png' alt="logo" style={{width: "100%"}}/>
       <h4>Regístrate para ver fotos y videos de tus amigos.</h4>
       <Form onSubmit={(ev)=>handleSubmit(ev, args)}>
         <Button color="facebook">

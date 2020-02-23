@@ -17,9 +17,11 @@ type User{
   }
   type Response {
     success: Boolean!
+    token: String
     errors: [Error]
   }
   type Mutation{
+    login(email: String!, password: String!): Response!
     createUser(username: String!, password: String!, fullname: String!, email: String!): Response!
   }
 `;

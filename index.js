@@ -14,12 +14,14 @@ import path from 'path';
 import { fileLoader, mergeTypes, mergeResolvers } from 'merge-graphql-schemas';
 const typeDefs = mergeTypes(fileLoader(path.join(__dirname, './types')));
 const resolvers = mergeResolvers(fileLoader(path.join(__dirname, './resolvers')));
-
+const SECRET = "ajhfshflkjfFSDFSjwehrkwjr;qek";
+ 
 const server = new ApolloServer({ 
   typeDefs, 
   resolvers,
   context: {
     models,
+    SECRET,
     user: {
         _id: 1, username: 'bob'
       }
