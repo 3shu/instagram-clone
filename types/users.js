@@ -1,5 +1,9 @@
 export default `
-  type User{
+type Error {
+    path: String!
+    message: String!
+}  
+type User{
     _id: ID!
     username: String!
     password: String!
@@ -11,7 +15,11 @@ export default `
     allUsers: [User]!
     getUser(_id: ID!): User!
   }
+  type Response {
+    success: Boolean!
+    errors: [Error]
+  }
   type Mutation{
-    createUser(username: String!, password: String!, fullname: String!, email: String!): Boolean!
+    createUser(username: String!, password: String!, fullname: String!, email: String!): Response!
   }
 `;

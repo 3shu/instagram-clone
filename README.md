@@ -1,4 +1,4 @@
 # INSTAGRAM CLONE
 ## ReacJS, Node, GraphQL, MongoDB
-## Registro de usuarios ya con la base de datos y GraphQL
-### test 6
+## Validaciones de formulario con la base de datos y GraphQL
+### test 7
