@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Grid, Image } from 'semantic-ui-react';
+import { graphql } from 'react-apollo';
+//Utils
+import queries from '../utils/queries';
+//Components
 import Signin from './login/Signin';
 import Signup from './login/Signup';
 // import LostPassword from './login/LostPassword';
@@ -37,6 +41,18 @@ class Login extends Component {
       handleLogin = (ev, args)=>{
         console.log(args);
       }
+      handleRegister = async (ev, args)=>{
+        console.log(args);
+        const response = await this.props.mutate({
+          variables: args
+        })
+        console.log('GraphQL response:', response);
+        if(response.data.createUser){
+          alert('User created');
+        }else{
+          alert('User not created');
+        }
+      }
     render() {
         const {showLogin, showRegister} = this.state;
         return (
@@ -47,7 +63,7 @@ class Login extends Component {
               </Grid.Column>
               <Grid.Column>
                 {showLogin && <Signin styles={styles} handleClick={this.showRegister} handleSubmit={this.handleLogin} /> }
-                {showRegister && <Signup styles={styles} handleClick={this.showLogin}  /> }
+                {showRegister && <Signup styles={styles} handleClick={this.showLogin}  handleSubmit={this.handleRegister} /> }
                 {/* {showLostPassword && <LostPassword styles={styles} /> } */}
               </Grid.Column>
             </Grid.Row>
@@ -57,4 +73,4 @@ class Login extends Component {
 }
 
 
-export default Login;
+export default graphql(queries.mutation.createUser)(Login);

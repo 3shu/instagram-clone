@@ -15,10 +15,10 @@ export default ({styles, handleClick, handleSubmit}) => {
         <h2>Instagram-Clone</h2>
         <Form onSubmit={(ev)=>handleSubmit(ev, args)}>
           <Form.Field>
-             <Form.Input name="email_signin" onChange={handleChange} placeholder='email o nombre de usuario' icon={<Icon name="user" size="large" />} />
+             <Form.Input name="email" onChange={handleChange} placeholder='email o nombre de usuario' icon={<Icon name="user" size="large" />} />
            </Form.Field>
            <Form.Field>
-             <Form.Input name="password_signin" onChange={handleChange} type="password" placeholder='Password' icon={<Icon name='eye slash' size="large" />} />
+             <Form.Input name="password" onChange={handleChange} type="password" placeholder='Password' icon={<Icon name='eye slash' size="large" />} />
            </Form.Field>
            <Button type='submit' primary fluid>Iniciar sesión</Button>
           <Divider horizontal> O </Divider>
